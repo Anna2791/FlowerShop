@@ -1,5 +1,5 @@
-TELEGRAM_BOT_TOKEN = '7749696009:AAGSabfeBF0amubhey7gOIDOjaHpvkGeNKs'
-TELEGRAM_CHAT_ID = '1374840231'
+TELEGRAM_BOT_TOKEN = ''
+TELEGRAM_CHAT_ID = ''
 from telegram import Bot
 
 import telebot
