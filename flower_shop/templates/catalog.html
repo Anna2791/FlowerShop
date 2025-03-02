@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог цветов</title>
+</head>
+<body>
+    <h1>Каталог цветов</h1>
+    <ul>
+        {% for flower in flowers %}
+            <li>
+                <h2>{{ flower.name }}</h2>
+                <p>Цена: {{ flower.price }} руб.</p>
+                <img src="{{ flower.image.url }}" alt="{{ flower.name }}" width="200">
+                <p>{{ flower.description }}</p>
+                <a href="{% url 'order' flower.id %}">Заказать</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
