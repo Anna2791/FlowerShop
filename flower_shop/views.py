@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import Flower, Order
-from .telegram_bot import send_order_to_telegram
+from flower_shop.models import Flower, Order
+from flower_shop.telegram_bot import send_order_to_telegram
 
 def register(request):
     if request.method == 'POST':
