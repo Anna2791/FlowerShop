@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Дополнительные стили для уменьшения ширины формы */
+        .form-container {
+            max-width: 500px; /* Установите желаемую максимальную ширину */
+            margin: 0 auto; /* Центрирование формы */
+        }
+    </style>
 </head>
 <body>
-    <h1>Регистрация</h1>
-    <form method="post" action="{% url 'register' %}">
-        {% csrf_token %}
-        <label for="username">Имя пользователя:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="email">Электронная почта:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="password1">Пароль:</label>
-        <input type="password" id="password1" name="password1" required>
-        <label for="password2">Подтверждение пароля:</label>
-        <input type="password" id="password2" name="password2" required>
-        <button type="submit">Зарегистрироваться</button>
-    </form>
+    <div class="container mt-5 form-container">
+        <h1 class="text-center mb-4">Регистрация</h1>
+        <form method="post" action="{% url 'register' %}">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password1">Пароль:</label>
+                <input type="password" class="form-control" id="password1" name="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Подтверждение пароля:</label>
+                <input type="password" class="form-control" id="password2" name="password2" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <!-- Подключение jQuery и Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

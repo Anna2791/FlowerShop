@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог цветов</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        /* Общие стили */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,52 +17,94 @@
         h1 {
             text-align: center;
             color: #5a5a8e;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            display: block;
-            margin: 0 auto 10px;
-            border-radius: 8px;
+            margin-bottom: 30px;
         }
         h2 {
             color: #5a5a8e;
-        }
-        a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #5a5a8e;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        a:hover {
-            background-color: #47476b;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Каталог цветов</h1>
-    <ul>
-        {% for flower in flowers %}
-            <li>
-                <h2>{{ flower.name }}</h2>
-                <p>Цена: {{ flower.price }} руб.</p>
-                <img src="{{ flower.image.url }}" alt="{{ flower.name }}" width="200">
-                <p>{{ flower.description }}</p>
-                <a href="{% url 'order' flower.id %}">Заказать</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Каталог цветов</h1>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Розы" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Розы</h2>
+                        <p class="card-text">Цена: 150 руб.</p>
+                        <p class="card-text">Классические красные розы - символ любви и страсти.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Тюльпаны" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Тюльпаны</h2>
+                        <p class="card-text">Цена: 120 руб.</p>
+                        <p class="card-text">Яркие тюльпаны - весеннее настроение и свежесть.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Лилии" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Лилии</h2>
+                        <p class="card-text">Цена: 200 руб.</p>
+                        <p class="card-text">Изысканные лилии - символ чистоты и нежности.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Подсолнухи" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Подсолнухи</h2>
+                        <p class="card-text">Цена: 100 руб.</p>
+                        <p class="card-text">Солнечные подсолнухи - радость и оптимизм.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Ирисы" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Ирисы</h2>
+                        <p class="card-text">Цена: 180 руб.</p>
+                        <p class="card-text">Элегантные ирисы - мудрость и надежда.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card mb-4">
+                    <img src="" class="card-img-top" alt="Гвоздики" style="border-radius: 8px; object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h2 class="card-title">Гвоздики</h2>
+                        <p class="card-text">Цена: 80 руб.</p>
+                        <p class="card-text">Стойкие гвоздики - символ верности и признательности.</p>
+                        <a href="order.html" class="btn btn-primary">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
