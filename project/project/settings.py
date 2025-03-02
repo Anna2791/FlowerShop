@@ -21,15 +21,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Обязательно должен быть первым
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Обязательно
+    'django.contrib.messages.middleware.MessageMiddleware',     # Обязательно
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-
 ]
+
 
 DATABASES = {
     'default': {
@@ -53,6 +52,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 STATIC_URL = '/static/'
