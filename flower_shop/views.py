@@ -1,8 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render,get_object_or_404, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from flower_shop.models import Flower, Order
 from flower_shop.telegram_bot import send_order_to_telegram
+
+from .models import Flower
+
+def order(request, flower_id):
+    flower = get_object_or_404(Flower, id=flower_id)
+    # Логика обработки заказа
+    return render(request, 'order.html', {'flower': flower})
 
 def register(request):
     if request.method == 'POST':
